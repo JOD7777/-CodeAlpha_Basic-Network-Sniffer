@@ -70,7 +70,7 @@ Pass: elitejod
 # ⚙️ Installation
 
 ```bash
-git clone https://github.com/JOD7777/Basic-Network-Sniffer.git
+git clone https://github.com/JOD7777/-CodeAlpha_Basic-Network-Sniffer.git
 cd Basic-Network-Sniffer
 python3 -m venv venv
 source venv/bin/activate
