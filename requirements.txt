@@ -1,0 +1,6 @@
+# NetWorx Sniffer - Requirements
+# Python 3.7+ recommended
+# Install: pip install -r requirements.txt
+
+scapy>=2.4.4
+colorama>=0.4.6
