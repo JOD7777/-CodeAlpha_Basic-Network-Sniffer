@@ -62,18 +62,19 @@ Basic Network Sniffer is an educational Python application that captures live ne
 
 ---
 
+🔒 Authentication
+
+User: admin
+Pass: elitejod
+
 # ⚙️ Installation
 
 ```bash
 git clone https://github.com/JOD7777/Basic-Network-Sniffer.git
-
 cd Basic-Network-Sniffer
-
 python3 -m venv venv
-
 source venv/bin/activate
-
-pip install scapy colorama
+pip install -r requirements.txt
 ```
 
 ---
