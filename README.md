@@ -71,10 +71,13 @@ Pass: elitejod
 
 ```bash
 git clone https://github.com/JOD7777/-CodeAlpha_Basic-Network-Sniffer.git
-cd Basic-Network-Sniffer
+cd  -CodeAlpha_Basic-Network-Sniffer
+ls
+cd Source
+ls
+python sniffer.py
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
 ```
 
 ---
