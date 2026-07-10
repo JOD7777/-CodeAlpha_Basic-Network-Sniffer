@@ -13,6 +13,7 @@ import struct
 import socket
 import threading
 import logging
+import getpass
 from datetime import datetime
 from collections import defaultdict
 from pathlib import Path
@@ -36,6 +37,38 @@ LOGO = r"""
         ███████║██║ ╚████║██║██║     ██║     ███████╗██║  ██║
         ╚══════╝╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝     ╚══════╝╚═╝  ╚═╝
 """
+
+# =========================================================================
+# AUTHENTICATION
+# =========================================================================
+
+AUTHORIZED_USERS = {
+    "admin": "elitejod"
+}
+
+def authenticate():
+    """Prompt for username and password before allowing tool usage."""
+    print(LOGO)
+    print("=" * 60)
+    print("  NETWORK SNIFFER - Authorized Access Required")
+    print("=" * 60)
+    print()
+
+    for attempt in range(3):
+        username = input("  Username: ").strip()
+        password = getpass.getpass("  Password: ").strip()
+
+        if username in AUTHORIZED_USERS and AUTHORIZED_USERS[username] == password:
+            print(f"\n  [+] Access granted. Welcome, {username}.\n")
+            return True
+        else:
+            remaining = 2 - attempt
+            if remaining > 0:
+                print(f"  [!] Invalid credentials. {remaining} attempt(s) remaining.\n")
+            else:
+                print("\n  [!] Too many failed attempts. Exiting.")
+                sys.exit(1)
+
 
 # Core packet manipulation library
 try:
@@ -572,7 +605,6 @@ class PacketAnalyzer:
 def print_logo():
     """Print the application logo banner."""
     if COLOR:
-        # Use cyan for the NetWorx logo, white for the Sniffer one
         print(f"{Fore.CYAN}{Style.BRIGHT}{LOGO}{Style.RESET_ALL}")
     else:
         print(LOGO)
@@ -580,7 +612,6 @@ def print_logo():
 
 def interactive_mode():
     """Menu-driven interface."""
-    print_logo()
     print("=" * 60)
     print("  NETWORK SNIFFER - Authorized Penetration Testing Tool")
     print("  For security research and network analysis")
@@ -644,6 +675,9 @@ def list_interfaces():
 
 
 if __name__ == "__main__":
+    # Authenticate first
+    authenticate()
+
     # Check for admin/root
     if os.geteuid() != 0 and sys.platform != "win32":
         print("[!] Root/admin privileges recommended for packet capture")
