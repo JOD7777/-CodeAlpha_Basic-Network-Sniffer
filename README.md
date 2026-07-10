@@ -82,7 +82,7 @@ pip install -r requirements.txt
 # ▶️ Usage
 
 Run the sniffer:
-
+```bash
 # Interactive menu
 sudo python3 sniffer.py
 
@@ -94,6 +94,8 @@ python3 sniffer.py --analyze capture.pcap
 
 # List interfaces
 sudo python3 sniffer.py --interfaces
+```
+
 ---
 
 # 📂 Project Structure
