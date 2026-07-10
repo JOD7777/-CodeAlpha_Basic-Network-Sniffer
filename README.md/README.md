@@ -55,7 +55,7 @@ Basic Network Sniffer is an educational Python application that captures live ne
 
 | Main Menu                        |
 | -------------------------------- | 
-| ![](ex.jp) |
+| ![](ex.jpg) |
 
 ---
 
