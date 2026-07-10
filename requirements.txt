@@ -4,3 +4,8 @@
 
 scapy>=2.4.4
 colorama>=0.4.6
+
+pip install -r requirements.txt
+
+pip install --pre scapy[complete]
+pip install colorama
