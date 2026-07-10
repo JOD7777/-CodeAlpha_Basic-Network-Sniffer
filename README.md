@@ -83,22 +83,17 @@ pip install -r requirements.txt
 
 Run the sniffer:
 
-```bash
-sudo python3 src/main.py
-```
+# Interactive menu
+sudo python3 sniffer.py
 
-Analyze a PCAP file:
+# Direct capture
+sudo python3 sniffer.py --capture eth0
 
-```bash
-python3 src/main.py --analyze capture.pcap
-```
+# Analyze existing PCAP
+python3 sniffer.py --analyze capture.pcap
 
-List available network interfaces:
-
-```bash
-python3 src/main.py --interfaces
-```
-
+# List interfaces
+sudo python3 sniffer.py --interfaces
 ---
 
 # 📂 Project Structure
